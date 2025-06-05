@@ -1,3 +1,4 @@
+
 // document.querySelector('h1').style.color = 'green';
 $('h1').css('color', 'green');//1: プロパティ名, 2: 値
 
@@ -58,3 +59,26 @@ const $workimg = $('.works-thumb img');
 console.log($workimg.attr('alt'));
 $workimg.attr('alt', 'アンティーク家具ショップ');
 $workimg.attr('id', 'works-antique');
+
+// Lesson 10
+const $serviceicon = $('.service-icon');
+$serviceicon.css({
+  'color': 'green',
+  'font-size': '120px',
+  'opacity': '0.8',
+});
+
+// Lesson 11
+// $('.faq-openclose').addClass('is-open');
+// $('.faq-openclose').removeClass('is-open');
+// $('.faq-openclose').toggleClass('is-open');
+
+// Lesson 12
+$('.faq-openclose').on('click', e => {
+  $(e.target).toggleClass('is-open');
+});
+
+// Lesson 14
+$('.faq-list *').on('click', e => {
+  console.log(e);
+});
