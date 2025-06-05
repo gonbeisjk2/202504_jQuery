@@ -47,3 +47,14 @@ $('#quick-news-btn').on('click', e => {
     display = true;
   }
 });
+
+// Lesson 8
+// $('.works-desc').empty();
+$('.works-desc').remove();
+
+// Lesson 9
+const $workimg = $('.works-thumb img');
+// $workimg.removeAttr('alt');
+console.log($workimg.attr('alt'));
+$workimg.attr('alt', 'アンティーク家具ショップ');
+$workimg.attr('id', 'works-antique');
