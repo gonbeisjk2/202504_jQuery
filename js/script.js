@@ -30,7 +30,20 @@ $tweetContainer.append(tweet);
 // $tweetContainer.text(tweet);
 
 // Lesson 7
+let display = true;
+
 $('#quick-news-btn').on('click', e => {
-  $('.quick-news-content').wrap('<div class="hidden">');
-  $(e.target).text('＋ ニュースを開く');
+  const $content = $('.quick-news-content');
+
+  if (display) {
+    // ニュースが表示されている時の処理＝＞隠す
+    $content.wrap('<div class="hidden">');
+    $(e.target).text('＋ ニュースを開く');
+    display = false;
+  } else {
+    // ニュースが隠れている時の処理＝＞表示する
+    $content.unwrap(); //親要素を取り去る
+    $(e.target).text('× ニュースを閉じる');
+    display = true;
+  }
 });
