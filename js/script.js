@@ -18,12 +18,12 @@ $('.works-container')
   .next().css('background-color', 'rgba(255 220 0 / .5)')
   .children().css('text-decoration', 'underline');
 
-// Lesson6
+// Lesson 6
 const tweet = '<div class="tweet-content">イエローマジックデザインワークショップを開催しました。「普段何気なく使っているモノの見方を変えて見る」をテーマに、参加者のいろんなアイデアと作品が生まれました。</div>';
 
 const $tweetContainer = $('.tweet-container');
 
-$tweetContainer.append(tweet);
+// $tweetContainer.append(tweet);
 // $tweetContainer.prepend(tweet);
 // $tweetContainer.before(tweet);
 // $tweetContainer.after(tweet);
@@ -87,7 +87,7 @@ $('.faq-list *').on('click', e => {
 
 const $mouseFollow = $('.mouse-follow');
 $(window).on('mousemove', e => {
-  console.log(e.clientX, e.clientY);
+  // console.log(e.clientX, e.clientY);
   $mouseFollow.css({
     'left': e.clientX,
     'top': e.clientY,
@@ -95,3 +95,32 @@ $(window).on('mousemove', e => {
 });
 
 // Lesson 15
+$('.mv-copy').on('click', e => {
+  $(e.target)
+    .animate({
+      'font-size': '100px',
+    })
+    .animate({
+      'font-weight': 700
+    })
+    .animate({
+      'height': 'hide'
+    });
+});
+
+$('.pagetop').on('click', () => {
+  $('html').animate({
+    'scrollTop': 0,
+  }, 1000);
+});
+
+// Lesson 16
+$('.tweet-show').on('click', () => {
+  $('.tweet-content-ls16').fadeIn(1000, function () {
+    $(this).css('background-color', 'yellow');
+  });
+});
+
+$('.tweet-hide').on('click', () => {
+  $('.tweet-content-ls16').fadeOut();
+});
