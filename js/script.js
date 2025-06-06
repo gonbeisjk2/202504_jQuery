@@ -80,5 +80,18 @@ $('.faq-openclose').on('click', e => {
 
 // Lesson 14
 $('.faq-list *').on('click', e => {
-  console.log(e);
+  e.stopPropagation();
+  // console.log(e.target);
+  console.log(e.type);
 });
+
+const $mouseFollow = $('.mouse-follow');
+$(window).on('mousemove', e => {
+  console.log(e.clientX, e.clientY);
+  $mouseFollow.css({
+    'left': e.clientX,
+    'top': e.clientY,
+  });
+});
+
+// Lesson 15
