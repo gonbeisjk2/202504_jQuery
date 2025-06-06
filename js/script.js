@@ -74,16 +74,16 @@ $serviceicon.css({
 // $('.faq-openclose').toggleClass('is-open');
 
 // Lesson 12
-$('.faq-openclose').on('click', e => {
-  $(e.target).toggleClass('is-open');
-});
+// $('.faq-openclose').on('click', e => {
+//   $(e.target).toggleClass('is-open');
+// });
 
 // Lesson 14
-$('.faq-list *').on('click', e => {
-  e.stopPropagation();
-  // console.log(e.target);
-  console.log(e.type);
-});
+// $('.faq-list *').on('click', e => {
+//   e.stopPropagation();
+//   // console.log(e.target);
+//   console.log(e.type);
+// });
 
 const $mouseFollow = $('.mouse-follow');
 $(window).on('mousemove', e => {
@@ -123,4 +123,16 @@ $('.tweet-show').on('click', () => {
 
 $('.tweet-hide').on('click', () => {
   $('.tweet-content-ls16').fadeOut();
+});
+
+// Lesson 17
+$('.faq-openclose').on('click', e => {
+  const dd = $(e.target).parent().next();
+
+  // if (dd.is(':visible')) {
+  //   dd.hide();
+  // } else {
+  //   dd.show();
+  // }
+  dd.toggle(!dd.is(':visible'));
 });
