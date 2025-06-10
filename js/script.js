@@ -130,9 +130,41 @@ $('.faq-openclose').on('click', e => {
   const dd = $(e.target).parent().next();
 
   // if (dd.is(':visible')) {
-  //   dd.hide();
+  //   dd.slideUp();
   // } else {
-  //   dd.show();
+  //   dd.slideDown();
   // }
-  dd.toggle(!dd.is(':visible'));
+  $(e.target).toggleClass('is-open');
+  dd.stop().slideToggle(!dd.is(':visible'));
+});
+
+// Lesson 19
+const tweets = [
+  '「DX支援」に当社のサービスがお役に立てるかもしれません。',
+  '良いデザインはどっち？ クイズを解くだけで、デザインの知識がどんどん身につく画期的なデザイン手法を紹介',
+  '現場監督からWebデザイナーに転職。建築現場責任者として活躍されていた川本さんのキャリアチェンジの理由は？',
+  'Webデザインの勉強やトレンドキャッチに役立つSNSアカウントおすすめ25選'
+];
+
+const tweetContent = $('.tweet-content-ls19');
+let counter = 0;
+
+tweetContent.text(tweets[counter]).fadeIn();
+
+setInterval(() => {
+  tweetContent.text(tweets[counter]).fadeOut(400, () => {
+    counter++;
+    if (counter === tweets.length) {
+      counter = 0;
+    }
+    tweetContent.text(tweets[counter]).fadeIn();
+  });
+}, 3000);
+
+
+// Lesson 20
+const serviceList = $('.service-list');
+$(window).on('scroll', () => {
+  const isInView = serviceList.inView('topOnly', 150);
+  console.log(isInView);
 });
