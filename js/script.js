@@ -166,5 +166,8 @@ setInterval(() => {
 const serviceList = $('.service-list');
 $(window).on('scroll', () => {
   const isInView = serviceList.inView('topOnly', 150);
-  console.log(isInView);
+
+  if (isInView && !serviceList.hasClass('in-view')) {
+    serviceList.addClass('in-view');
+  }
 });
