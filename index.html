@@ -15,9 +15,10 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&family=Work+Sans:wght@100;200;400;700&display=swap"
     rel="stylesheet">
 
+
+  <link rel="stylesheet" href="js/slick/slick.css">
+  <link rel="stylesheet" href="js/slick/slick-theme.css">
   <link rel="stylesheet" href="css/style.css">
-
-
 
 </head>
 
@@ -25,6 +26,11 @@
   <header class="site-header">
     <div class="container site-header-container">
       <p class="site-header-logo"><a href="#"><i class="ri-edit-circle-fill"></i>Yellow Magic Design</a></p>
+
+      <button class="site-header-navbtn" type="button">
+        <span>ボタン</span>
+      </button>
+
       <nav class="site-header-nav">
         <ul>
           <li><a href="#">Home</a></li>
@@ -94,6 +100,7 @@
       <div class="container">
         <h2 class="section-head">Our Works</h2>
         <div class="works-container">
+          <!--1枚目のパネル-->
           <section class="works-panel">
             <div class="works-thumb">
               <img src="https://picsum.photos/id/311/900/600" alt="Antique Furniture Shop">
@@ -101,6 +108,34 @@
             <div class="works-detail">
               <h3 class="works-title">Antique Furniture Shop</h3>
               <p class="works-cat">Web Design</p>
+              <p class="works-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量...</p>
+              <p class="works-link">
+                <a href="#" class="btn btn-primary">詳しく見る</a>
+              </p>
+            </div>
+          </section>
+          <!--2枚目のパネル-->
+          <section class="works-panel">
+            <div class="works-thumb">
+              <img src="https://picsum.photos/id/20/900/600" alt="Logo Design Book">
+            </div>
+            <div class="works-detail">
+              <h3 class="works-title">Logo Design Book</h3>
+              <p class="works-cat">Graphic Design</p>
+              <p class="works-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量...</p>
+              <p class="works-link">
+                <a href="#" class="btn btn-primary">詳しく見る</a>
+              </p>
+            </div>
+          </section>
+          <!--3枚目のパネル-->
+          <section class="works-panel">
+            <div class="works-thumb">
+              <img src="https://picsum.photos/id/250/900/600" alt="First Photo Gallery">
+            </div>
+            <div class="works-detail">
+              <h3 class="works-title">First Photo Gallery</h3>
+              <p class="works-cat">Other</p>
               <p class="works-desc">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量...</p>
               <p class="works-link">
                 <a href="#" class="btn btn-primary">詳しく見る</a>
@@ -214,6 +249,7 @@
   <!-- 順番が重要。先にライブラリファイルを読み込まないと後のファイルでその書き方が通用しない -->
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/jQuery-inView.min.js"></script>
+  <script src="js/slick/slick.min.js"></script>
   <script src="js/script.js"></script>
 
 </body>

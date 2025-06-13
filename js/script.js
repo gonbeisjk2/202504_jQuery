@@ -8,15 +8,15 @@ $('.mv-copy').next().css('text-decoration', 'underline');
 $('.mv-subcopy').prev().css('font-weight', 'bold');
 $('.service-card').parent().css('border', '1px solid orange');
 $('.site-footer-sns').children().css('color', 'orange');
-$('.works-panel').find('.works-title').css('border-bottom', '2px solid #000');
+// $('.works-panel').find('.works-title').css('border-bottom', '2px solid #000');
 $('.contact-logo').closest('div').css('background', '#eee');
 
 // Lesson5
-$('.works-container')
-  .css('border', '4px solid #000')
-  .find('.works-thumb').css('opacity', '0.5')
-  .next().css('background-color', 'rgba(255 220 0 / .5)')
-  .children().css('text-decoration', 'underline');
+// $('.works-container')
+//   .css('border', '4px solid #000')
+//   .find('.works-thumb').css('opacity', '0.5')
+//   .next().css('background-color', 'rgba(255 220 0 / .5)')
+//   .children().css('text-decoration', 'underline');
 
 // Lesson 6
 const tweet = '<div class="tweet-content">イエローマジックデザインワークショップを開催しました。「普段何気なく使っているモノの見方を変えて見る」をテーマに、参加者のいろんなアイデアと作品が生まれました。</div>';
@@ -170,4 +170,29 @@ $(window).on('scroll', () => {
   if (isInView && !serviceList.hasClass('in-view')) {
     serviceList.addClass('in-view');
   }
+});
+
+// Lesson 20 slick
+$('.works-container').slick({
+  arrows: true,//前後の矢印を表示する
+  autoplay: true, //自動スライドを有効化する
+  autoplaySpeed: 1500,//スライドを表示する時間（ミリ秒)
+  dots: true,//ページネーションを表示する
+  // fade: true, //フェードアニメーションにする
+  // slidesToShow: 2, //１回に表示するパネルの枚数
+  speed: 800,//スライドアニメーションの時間（ミリ秒）
+  responsive: [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        dots: false,
+      }
+    }
+  ],
 });
