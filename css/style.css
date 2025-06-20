@@ -102,7 +102,7 @@ body {
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 3000;
   background-color: rgba(255 255 255 / .9);
 }
 
@@ -667,16 +667,15 @@ body {
 }
 
 .site-header-navbtn {
+  display: none;
   position: fixed;
   top: 10px;
   right: 10px;
-
   width: 40px;
   height: 40px;
   background: none;
   border: none;
   z-index: 1;
-  background-color: #eee;
 }
 
 .site-header-navbtn span,
@@ -689,6 +688,7 @@ body {
   position: absolute;
   top: 50%;
   left: 5px;
+  transition: .4s;
 }
 
 .site-header-navbtn::before,
@@ -718,6 +718,17 @@ body {
     left: 0;
     top: 0;
     background-color: var(--base-color);
+    /*幅に対する相対値*/
+    transform: translateX(-100%);
+    transition: .4s;
+  }
+
+  body.is-nav-open .site-header-nav {
+    transform: translateX(0);
+  }
+
+  .site-header-navbtn {
+    display: block;
   }
 
   .site-header-nav ul {
@@ -732,4 +743,25 @@ body {
     margin-right: 0;
     margin-bottom: 1.5em;
   }
+
+  .site-header-nav ul li a {
+    font-size: 1.5rem;
+  }
+}
+
+/*@mediaのおわり*/
+
+/* ハンバーガーボタンのスタイル */
+/* 真ん中の線 */
+body.is-nav-open .site-header-navbtn span {
+  /*数字の部分は倍率を指定*/
+  transform: scaleX(0);
+}
+
+body.is-nav-open .site-header-navbtn::before {
+  transform: rotate(45deg);
+}
+
+body.is-nav-open .site-header-navbtn::after {
+  transform: rotate(-45deg);
 }
