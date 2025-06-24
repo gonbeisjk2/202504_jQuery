@@ -102,7 +102,7 @@ body {
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 3000;
   background-color: rgba(255 255 255 / .9);
 }
 
@@ -666,8 +666,8 @@ body {
   transition-delay: .8s;
 }
 
-/* ハンバーガーメニューのスタイル */
 .site-header-navbtn {
+  display: none;
   position: fixed;
   top: 10px;
   right: 10px;
@@ -676,13 +676,11 @@ body {
   background: none;
   border: none;
   z-index: 1;
-  background-color: #eee;
 }
 
 .site-header-navbtn span,
 .site-header-navbtn::before,
 .site-header-navbtn::after {
-  /* display: block; */
   width: 30px;
   height: 1px;
   background-color: #999;
@@ -690,6 +688,7 @@ body {
   position: absolute;
   top: 50%;
   left: 5px;
+  transition: .4s;
 }
 
 .site-header-navbtn::before,
@@ -705,10 +704,64 @@ body {
   transform: translateY(8px);
 }
 
-@media screen and (max-width: 767px) {
+.site-header-navbtn span {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
 
-  /* スクリーンサイズが767pxまでのスタイルを記述 */
-  body {
-    background-color: gold;
+@media screen and (max-width: 767px) {
+  .site-header-nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--base-color);
+    /*幅に対する相対値*/
+    transform: translateX(-100%);
+    transition: .4s;
   }
+
+  body.is-nav-open .site-header-nav {
+    transform: translateX(0);
+  }
+
+  .site-header-navbtn {
+    display: block;
+  }
+
+  .site-header-nav ul {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    /* align-items: center; */
+  }
+
+  .site-header-nav ul li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 1.5em;
+  }
+
+  .site-header-nav ul li a {
+    font-size: 1.5rem;
+  }
+}
+
+/*@mediaのおわり*/
+
+/* ハンバーガーボタンのスタイル */
+/* 真ん中の線 */
+body.is-nav-open .site-header-navbtn span {
+  /*数字の部分は倍率を指定*/
+  transform: scaleX(0);
+}
+
+body.is-nav-open .site-header-navbtn::before {
+  transform: rotate(45deg);
+}
+
+body.is-nav-open .site-header-navbtn::after {
+  transform: rotate(-45deg);
 }

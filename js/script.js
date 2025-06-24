@@ -196,3 +196,13 @@ $('.works-container').slick({
     }
   ],
 });
+
+// ハンバーガーメニュー
+$('.site-header-navbtn').on('click', () => {
+  $('body').toggleClass('is-nav-open');
+});
+
+// ナビゲーションのリンクをクリックしたときに、ドロワーを閉じる
+$('.site-header-nav').on('click', 'a', () => {
+  $('body').removeClass('is-nav-open');
+});
